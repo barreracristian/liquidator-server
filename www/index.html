@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- Marcado de microdatos añadido por el Asistente para el marcado de datos estructurados de Google. -->
+<html ng-app="liquidator-server">
+<head>
+    <title>Liquidator</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <link rel="icon" href="favicon.ico">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- bower:js -->
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/bootstrap/dist/css/bootstrap.css"></script>
+    <script src="lib/moment/moment.js"></script>
+    <script src="lib/lodash/lodash.js"></script>
+    <!-- endbower -->
+
+    <!-- build:js js/delobueno.js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers/BusquedaController.js"></script>
+    <script src="js/controllers/IndexController.js"></script>
+    <script src="js/controllers/SiniestroController.js"></script>
+    <script src="js/extras.js"></script>
+    <!-- endbuild -->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+</head>
+
+<body ng-controller="IndexController">
+
+    <!-- HEADER AND NAVBAR -->
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Angular Routing Example</a>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="#busqueda"><i class="fa fa-shield"></i> Busqueda</a></li>
+                    <li><a href="#siniestro"><i class="fa fa-shield"></i> Siniestro</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT AND INJECTED VIEWS -->
+    <div>
+
+        index.html
+
+        <section ui-view></section>
+
+    </div>
+
+</body>
+</html>

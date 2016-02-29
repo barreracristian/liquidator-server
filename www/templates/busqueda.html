@@ -1,0 +1,65 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="/buscar">Buscar</a></li>
+                <li class="nav nav-sidebar nav-divider"></li>
+                <li><a href="/stat/siniestros">Siniestros</a></li>
+                <li><a href="/stat/talleres">Talleres</a></li>
+                <li><a href="/stat/liquidadores">Liquidadores</a></li>
+                <li><a href="/stat/tandems">Tandems</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <div class="panel panel-primary" style="text-align: center">
+                <div class="panel-heading">
+                    <form class="form-inline" role="form">
+                        <div class="form-group">
+                            <input type=text class="form-control" id="exampleInputEmail2" placeholder="Criterio">
+                            <button type="submit" class="btn btn-default">Buscar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Marca</th>
+                                <th>Modelo</th>
+                                <th>Patente</th>
+                                <th>Asegurado</th>
+                                <th>Rut</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>12414</td>
+                                <td>Toyota</td>
+                                <td>Yaris</td>
+                                <td>LJ-4123</td>
+                                <td>Guillermo Paredes</td>
+                                <td>15.231.532-3</td>
+                                <td><a href="/siniestro"><button class="btn btn-success btn-xs">Ver</button></a></td>
+                            </tr>
+                            <tr>
+                                <td>93523</td>
+                                <td>Alfa Romeo</td>
+                                <td>Mito</td>
+                                <td>CSJG-21</td>
+                                <td>Cristobal Yañez</td>
+                                <td>7.242.578-k</td>
+                                <td><a href="/siniestro"><button class="btn btn-success btn-xs">Ver</button></a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
