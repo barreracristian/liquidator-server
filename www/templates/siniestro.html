@@ -1,179 +1,179 @@
-
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img alt="Brand" src="/assets/images/logo.png"/>
-        </a>
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Seguros - Dashboard</a>
-        </div>
-        <div class="navbar-text navbar-right">
-            <a href="#" class="navbar-link">Juan Perez / Perfil</a>
-        </div>
+<h1 class="page-header">
+    Siniestro 23457
+    <div style="float: right;">
+        <button class="btn btn-warning">+ Observación</button>
+        <button class="btn btn-danger">+ Llamada Asegurado</button>
     </div>
-</nav>
+</h1>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-            <ul class="nav nav-sidebar">
-                <li class="active"><a href="/buscar">Buscar</a></li>
-                <li class="nav nav-sidebar nav-divider"></li>
-                <li><a href="/stat/siniestros">Siniestros</a></li>
-                <li><a href="/stat/talleres">Talleres</a></li>
-                <li><a href="/stat/liquidadores">Liquidadores</a></li>
-                <li><a href="/stat/tandems">Tandems</a></li>
-            </ul>
-        </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-
-            <h1 class="page-header">
-                Siniestro 23457
-                <div style="float: right;">
-                <button class="btn btn-warning">+ Observación</button>
-                <button class="btn btn-danger">+ Llamada Asegurado</button>
-                </div>
-            </h1>
-
-            <div class="panel panel-default">
-                <div class="panel-body" style="background-color: #F5F5F5">
-                    <table class="table table-bordered table-condensed" style="margin-bottom: 0; background-color:#FFF;">
-                        <tr>
-                            <td><b>Marca:</b> {{sin.siniestro.marca}}</td>
-                            <td><b>Ano:</b> {{sin.siniestro.ano}}</td>
-                            <td><b>Estado:</b> No inspeccionado </td>
-                        </tr>
-                        <tr>
-                            <td><b>Modelo:</b> {{sin.siniestro.modelo}}</td>
-                            <td><b>Patente:</b> {{sin.siniestro.patente}}</td>
-                            <td><b>Taller:</b> Taller A</td>
-                        </tr>
-                        <tr>
-                            <td><b>Color:</b> {{sin.siniestro.color}}</td>
-                            <td><b>Asegurado:</b> {{sin.siniestro.propietario}}</td>
-                            <td><b>Sucursal:</b> Av. Matta 2634 <a href="#" style="float: right"><button class="btn btn-success btn-xs">Cambiar</button></a></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-
-            <div class="panel panel-default">
-                <div class="panel-body" style="background-color: #D9EDF7">
-
-                    <table class="table table-bordered table-condensed" style="margin-bottom: 0; background-color:#FFF;">
-                        <tr>
-                            <td><img src="assets/images/camera.png"/>&nbsp;Dcto. Constancia Carabineros</td>
-                            <td><img src="assets/images/camera.png"/>&nbsp;Dcto. Padron Auto</td>
-                        </tr>
-                        <tr>
-                            <td><img src="assets/images/camera.png"/>&nbsp;Dcto. Licencia de Conducir</td>
-                            <td><img src="assets/images/camera.png"/>&nbsp;Dcto. Recibo de Conformidad</td>
-                        </tr>
-                    </table>
-
-                </div>
-            </div>
-
-            <h2 class="sub-header">Bitácora</h2>
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th width="1" nowrap>Fecha</th>
-                        <th>Asunto</th>
-                        <th>Detalle</th>
-                        <th width="1">Hace</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td nowrap><small>Lun 15 Oct 2014</small></td>
-                        <td nowrap><b>Ingreso Denuncia</b></td>
-                        <td>Teléfonicamente</td>
-                        <td nowrap>23 dias</td>
-                    </tr>
-                    <tr>
-                        <td nowrap><small>Martes 16 Oct 2014</small></td>
-                        <td nowrap><b>Ingreso a Taller</b></td>
-                        <td>Tentativo por correo</td>
-                        <td nowrap>22 dias</td>
-                    </tr>
-                    <tr>
-                        <td nowrap><small>Miercoles 17 Oct 2014</small></td>
-                        <td nowrap><b>Inspección por liquidador</b></td>
-                        <td>Daños graves</td>
-                        <td nowrap>20 dias</td>
-                    </tr>
-                    <tr>
-                        <td nowrap><small>Jueves 18 Oct 2014</small></td>
-                        <td nowrap><b>Ingreso de datos al sistema</b></td>
-                        <td>-</td>
-                        <td nowrap>20 dias</td>
-                    </tr>
-                    <tr>
-                        <td nowrap><small>Viernes 19 Oct 2014</small></td>
-                        <td nowrap><b>Petición de Cotización Mas Garantia</b></td>
-                        <td>Repuestos pueden tardar debido a importación</td>
-                        <td nowrap>19 dias</td>
-                    </tr>
-                    <tr>
-                        <td nowrap><small>Viernes 19 Oct 2014</small></td>
-                        <td nowrap><span class="label label-warning" style="font-size: medium">Observación</span></td>
-                        <td>Mas garantía confirma que los repuestos tardarán en llegar. Problemas de disponibilidad del importador.</td>
-                        <td nowrap>19 dias</td>
-                    </tr>
-                    <tr>
-                        <td nowrap><small>Lunes 22 Oct 2014</small></td>
-                        <td nowrap><b>Recepción Cotización</b></td>
-                        <td>-</td>
-                        <td nowrap>16 dias</td>
-                    </tr>
-                    <tr>
-                        <td nowrap><small>Martes 23 Oct 2014</small></td>
-                        <td nowrap><b>Recepción Repuestos Taller</b></td>
-                        <td>-</td>
-                        <td nowrap>15 dias</td>
-                    </tr>
-                    <tr>
-                        <td nowrap><small>Martes 23 Oct 2014</small></td>
-                        <td nowrap><b>En reparación</b></td>
-                        <td>-</td>
-                        <td nowrap>15 dias</td>
-                    </tr>
-                    <tr>
-                        <td nowrap><small>Viernes 26 Oct 2014</small></td>
-                        <td nowrap><span class="label label-warning" style="font-size: medium">Observación</span></td>
-                        <td>Taller llama para avisar que la reparación se torna complicada, no saben cuando tiempo va a tomar.</td>
-                        <td nowrap>12 dias</td>
-                    </tr>
-                    <tr>
-                        <td nowrap><small>Lunes 29 Oct 2014</small></td>
-                        <td nowrap><span class="label label-danger" style="font-size: medium">Llamada Asegurado</span></td>
-                        <td>Reclamo por demora de reparación</td>
-                        <td nowrap>9 dias</td>
-                    </tr>
-                    <tr>
-                        <td nowrap><small>-</small></td>
-                        <td nowrap><b>Retiro de VH en taller</b></td>
-                        <td>-</td>
-                        <td nowrap>-</td>
-                    </tr>
-                    <tr>
-                        <td nowrap><small>-</small></td>
-                        <td nowrap><b>Retiro en taller por asegurado</b></td>
-                        <td>-</td>
-                        <td nowrap>-</td>
-                    </tr>
-                    <tr>
-                        <td nowrap><small>-</small></td>
-                        <td nowrap><b>Forma del recibo de conformidad</b></td>
-                        <td>-</td>
-                        <td nowrap>-</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-
-        </div>
+<div class="panel panel-default">
+    <div class="panel-body" style="background-color: #F5F5F5">
+        <table class="table table-bordered table-condensed" style="margin-bottom: 0; background-color:#FFF;">
+            <tr>
+                <td><b>Marca:</b> {{sin.siniestro.marca}}</td>
+                <td><b>Ano:</b> {{sin.siniestro.ano}}</td>
+                <td><b>Estado:</b> No inspeccionado</td>
+            </tr>
+            <tr>
+                <td><b>Modelo:</b> {{sin.siniestro.modelo}}</td>
+                <td><b>Patente:</b> {{sin.siniestro.patente}}</td>
+                <td><b>Taller:</b> Taller A</td>
+            </tr>
+            <tr>
+                <td><b>Color:</b> {{sin.siniestro.color}}</td>
+                <td><b>Asegurado:</b> {{sin.siniestro.propietario}}</td>
+                <td><b>Sucursal:</b> Av. Matta 2634 <a href="#" style="float: right">
+                    <button class="btn btn-success btn-xs">Cambiar</button>
+                </a></td>
+            </tr>
+        </table>
     </div>
 </div>
+
+<div class="panel panel-default">
+    <div class="panel-body" style="background-color: #D9EDF7">
+
+        <table class="table table-bordered table-condensed" style="margin-bottom: 0; background-color:#FFF;">
+            <tr>
+                <td><img src="../images/camera.png"/>&nbsp;Dcto. Constancia Carabineros</td>
+                <td><img src="../images/camera.png"/>&nbsp;Dcto. Padron Auto</td>
+            </tr>
+            <tr>
+                <td><img src="../images/camera.png"/>&nbsp;Dcto. Licencia de Conducir</td>
+                <td><img src="../images/camera.png"/>&nbsp;Dcto. Recibo de Conformidad</td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+<h2 class="sub-header">Bitácora</h2>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th width="1" nowrap>Fecha</th>
+            <th>Asunto</th>
+            <th>Detalle</th>
+            <th width="1">Hace</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td nowrap>
+                <small>Lun 15 Oct 2014</small>
+            </td>
+            <td nowrap><b>Ingreso Denuncia</b></td>
+            <td>Teléfonicamente</td>
+            <td nowrap>23 dias</td>
+        </tr>
+        <tr>
+            <td nowrap>
+                <small>Martes 16 Oct 2014</small>
+            </td>
+            <td nowrap><b>Ingreso a Taller</b></td>
+            <td>Tentativo por correo</td>
+            <td nowrap>22 dias</td>
+        </tr>
+        <tr>
+            <td nowrap>
+                <small>Miercoles 17 Oct 2014</small>
+            </td>
+            <td nowrap><b>Inspección por liquidador</b></td>
+            <td>Daños graves</td>
+            <td nowrap>20 dias</td>
+        </tr>
+        <tr>
+            <td nowrap>
+                <small>Jueves 18 Oct 2014</small>
+            </td>
+            <td nowrap><b>Ingreso de datos al sistema</b></td>
+            <td>-</td>
+            <td nowrap>20 dias</td>
+        </tr>
+        <tr>
+            <td nowrap>
+                <small>Viernes 19 Oct 2014</small>
+            </td>
+            <td nowrap><b>Petición de Cotización Mas Garantia</b></td>
+            <td>Repuestos pueden tardar debido a importación</td>
+            <td nowrap>19 dias</td>
+        </tr>
+        <tr>
+            <td nowrap>
+                <small>Viernes 19 Oct 2014</small>
+            </td>
+            <td nowrap><span class="label label-warning" style="font-size: medium">Observación</span></td>
+            <td>Mas garantía confirma que los repuestos tardarán en llegar. Problemas de disponibilidad del
+                importador.
+            </td>
+            <td nowrap>19 dias</td>
+        </tr>
+        <tr>
+            <td nowrap>
+                <small>Lunes 22 Oct 2014</small>
+            </td>
+            <td nowrap><b>Recepción Cotización</b></td>
+            <td>-</td>
+            <td nowrap>16 dias</td>
+        </tr>
+        <tr>
+            <td nowrap>
+                <small>Martes 23 Oct 2014</small>
+            </td>
+            <td nowrap><b>Recepción Repuestos Taller</b></td>
+            <td>-</td>
+            <td nowrap>15 dias</td>
+        </tr>
+        <tr>
+            <td nowrap>
+                <small>Martes 23 Oct 2014</small>
+            </td>
+            <td nowrap><b>En reparación</b></td>
+            <td>-</td>
+            <td nowrap>15 dias</td>
+        </tr>
+        <tr>
+            <td nowrap>
+                <small>Viernes 26 Oct 2014</small>
+            </td>
+            <td nowrap><span class="label label-warning" style="font-size: medium">Observación</span></td>
+            <td>Taller llama para avisar que la reparación se torna complicada, no saben cuando tiempo va a tomar.</td>
+            <td nowrap>12 dias</td>
+        </tr>
+        <tr>
+            <td nowrap>
+                <small>Lunes 29 Oct 2014</small>
+            </td>
+            <td nowrap><span class="label label-danger" style="font-size: medium">Llamada Asegurado</span></td>
+            <td>Reclamo por demora de reparación</td>
+            <td nowrap>9 dias</td>
+        </tr>
+        <tr>
+            <td nowrap>
+                <small>-</small>
+            </td>
+            <td nowrap><b>Retiro de VH en taller</b></td>
+            <td>-</td>
+            <td nowrap>-</td>
+        </tr>
+        <tr>
+            <td nowrap>
+                <small>-</small>
+            </td>
+            <td nowrap><b>Retiro en taller por asegurado</b></td>
+            <td>-</td>
+            <td nowrap>-</td>
+        </tr>
+        <tr>
+            <td nowrap>
+                <small>-</small>
+            </td>
+            <td nowrap><b>Forma del recibo de conformidad</b></td>
+            <td>-</td>
+            <td nowrap>-</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+

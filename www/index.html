@@ -10,12 +10,14 @@
 
     <link rel="icon" href="favicon.ico">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/dashboard.css" rel="stylesheet">
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- bower:js -->
     <script src="lib/angular/angular.min.js"></script>
     <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="lib/jquery/dist/jquery.js"></script>
-    <script src="lib/bootstrap/dist/css/bootstrap.css"></script>
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="lib/moment/moment.js"></script>
     <script src="lib/lodash/lodash.js"></script>
     <!-- endbower -->
@@ -25,6 +27,9 @@
     <script src="js/controllers/BusquedaController.js"></script>
     <script src="js/controllers/IndexController.js"></script>
     <script src="js/controllers/SiniestroController.js"></script>
+    <script src="js/controllers/StatsSiniestrosController.js"></script>
+    <script src="js/controllers/StatsTalleresController.js"></script>
+    <script src="js/controllers/StatsTandemsController.js"></script>
     <script src="js/extras.js"></script>
     <!-- endbuild -->
 
@@ -35,31 +40,85 @@
 
 <body ng-controller="IndexController">
 
-    <!-- HEADER AND NAVBAR -->
-    <header>
-        <nav class="navbar navbar-default">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/">Angular Routing Example</a>
-                </div>
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-                    <li><a href="#busqueda"><i class="fa fa-shield"></i> Busqueda</a></li>
-                    <li><a href="#siniestro"><i class="fa fa-shield"></i> Siniestro</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <!-- MAIN CONTENT AND INJECTED VIEWS -->
-    <div>
-
-        index.html
-
-        <section ui-view></section>
-
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Liquidator</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="Search...">
+            </form>
+        </div>
     </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+                <li><a href="#busqueda">Busqueda</a></li>
+                <li><a href="#siniestro">Siniestro</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="#statssiniestros">Stats Siniestros</a></li>
+                <li><a href="#statstalleres">Stats Talleres</a></li>
+                <li><a href="#statstandems">Stats Tandems</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <section ui-view></section>
+        </div>
+    </div>
+</div>
+
+
+<!--nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img alt="Brand" src="../images/logo.png"/>
+        </a>
+
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Seguros - Dashboard</a>
+        </div>
+        <div class="navbar-text navbar-right">
+            <a href="#" class="navbar-link">Juan Perez / Perfil</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <ul class="nav nav-sidebar">
+                <li><a href="/buscar">Buscar</a></li>
+                <li class="nav nav-sidebar nav-divider"></li>
+                <li><a href="/stat/siniestros">Siniestros</a></li>
+                <li><a href="/stat/talleres">Talleres</a></li>
+                <li><a href="/stat/liquidadores">Liquidadores</a></li>
+                <li class="active"><a href="/stat/tandems">Tandems</a></li>
+            </ul>
+        </div>
+        <div class="col-md-10 col-md-offset-2">
+
+
+        </div>
+    </div>
+</div-->
 
 </body>
 </html>
