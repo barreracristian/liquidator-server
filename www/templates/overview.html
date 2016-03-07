@@ -1,0 +1,33 @@
+<h1 class="page-header">
+    Talleres
+</h1>
+<ul>
+    <li ng-repeat="taller in talleres">
+        <h3>{{taller.nombre}}</h3>
+        <ul>
+            <li ng-repeat="sucursal in taller.sucursales">
+                <h4>{{sucursal.nombre}}</h4>
+                <ul>
+                    <li ng-repeat="siniestro in siniestros[sucursal.id]">
+                        <table class="table table-condensed">
+                            <tr>
+                                <td>{{siniestro.id}}</td>
+                                <td>{{siniestro.marca}}</td>
+                                <td>{{siniestro.modelo}}</td>
+                                <td>{{siniestro.color}}</td>
+                                <td>{{siniestro.ano}}</td>
+                                <td>{{siniestro.patente}}</td>
+                                <td>
+                                    <a class="btn btn-default" href="#/siniestro/{{siniestro.id}}" role="button">Ver</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+
+

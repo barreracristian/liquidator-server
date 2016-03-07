@@ -9,6 +9,12 @@ var app = express();
 
 var api = require('./routes/api');
 
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 app.use('/api', api);
 
 app.get('/main', function(req, res) {
@@ -19,12 +25,6 @@ app.use(express.static('www'));
 app.use(cookieParser());
 app.use(bodyParser.json());
 //app.use(session({secret: 'ill be back'}));
-
-app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-});
 
 var server = app.listen(3000, function () {
     var host = server.address().address;

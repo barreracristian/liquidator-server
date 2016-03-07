@@ -1,5 +1,5 @@
 <h1 class="page-header">
-    Siniestro 23457
+    Siniestro {{siniestro.id}}
     <div style="float: right;">
         <button class="btn btn-warning">+ Observación</button>
         <button class="btn btn-danger">+ Llamada Asegurado</button>
@@ -10,19 +10,19 @@
     <div class="panel-body" style="background-color: #F5F5F5">
         <table class="table table-bordered table-condensed" style="margin-bottom: 0; background-color:#FFF;">
             <tr>
-                <td><b>Marca:</b> {{sin.siniestro.marca}}</td>
-                <td><b>Ano:</b> {{sin.siniestro.ano}}</td>
-                <td><b>Estado:</b> No inspeccionado</td>
+                <td><b>Marca:</b> {{siniestro.marca}}</td>
+                <td><b>Ano:</b> {{siniestro.ano}}</td>
+                <td><b>Estado:</b> {{siniestro.estado}}</td>
             </tr>
             <tr>
-                <td><b>Modelo:</b> {{sin.siniestro.modelo}}</td>
-                <td><b>Patente:</b> {{sin.siniestro.patente}}</td>
-                <td><b>Taller:</b> Taller A</td>
+                <td><b>Modelo:</b> {{siniestro.modelo}}</td>
+                <td><b>Patente:</b> {{siniestro.patente}}</td>
+                <td><b>Taller:</b> {{taller.nombre}}</td>
             </tr>
             <tr>
-                <td><b>Color:</b> {{sin.siniestro.color}}</td>
-                <td><b>Asegurado:</b> {{sin.siniestro.propietario}}</td>
-                <td><b>Sucursal:</b> Av. Matta 2634 <a href="#" style="float: right">
+                <td><b>Color:</b> {{siniestro.color}}</td>
+                <td><b>Asegurado:</b> {{siniestro.propietario}}</td>
+                <td><b>Sucursal:</b>{{sucursal.nombre}}<a href="#" style="float: right">
                     <button class="btn btn-success btn-xs">Cambiar</button>
                 </a></td>
             </tr>
