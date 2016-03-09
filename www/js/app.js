@@ -4,9 +4,7 @@ var app = angular.module('liquidator-server', [
     'liquidator-server.controllers.IndexController',
     'liquidator-server.controllers.OverviewController',
     'liquidator-server.controllers.SiniestroController',
-    'liquidator-server.controllers.StatsSiniestrosController',
-    'liquidator-server.controllers.StatsTalleresController',
-    'liquidator-server.controllers.StatsTandemsController',
+    'liquidator-server.controllers.StatsController',
     'liquidator-server.services.DBService',
     'liquidator-server.services.UtilService',
     'liquidator-server.extras'
@@ -37,20 +35,10 @@ app.run(
                 templateUrl: "templates/siniestro.html",
                 controller: "SiniestroController"
             })
-            .state('statssiniestros', {
-                url: "/statssiniestros",
-                templateUrl: "templates/stats_siniestros.html",
-                controller: "StatsSiniestrosController"
-            })
-            .state('statstalleres', {
-                url: "/statstalleres",
-                templateUrl: "templates/stats_talleres.html",
-                controller: "StatsTalleresController"
-            })
-            .state('statstandems', {
-                url: "/statstandems",
-                templateUrl: "templates/stats_tandems.html",
-                controller: "StatsTandemsController"
+            .state('stats', {
+                url: "/stats",
+                templateUrl: "templates/stats.html",
+                controller: "StatsController"
             })
         ;
 
