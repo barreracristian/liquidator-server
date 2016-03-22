@@ -47,133 +47,31 @@
     </div>
 </div>
 
+<style scoped>
+    .label{
+        font-size: 14px;
+    }
+</style>
+
 <h2 class="sub-header">Bitácora</h2>
-<div class="table-responsive">
-    <table class="table table-striped">
-        <thead>
+<div ng-if="bitacora">
+    <table class="table table-condensed table-bordered table-striped">
         <tr>
             <th width="1" nowrap>Fecha</th>
             <th>Asunto</th>
             <th>Detalle</th>
             <th width="1">Hace</th>
         </tr>
-        </thead>
-        <tbody>
-        <tr>
+        <tr ng-repeat="event in bitacora">
             <td nowrap>
-                <small>Lun 15 Oct 2014</small>
+                <small>{{event.date | prettyDate}}</small>
             </td>
-            <td nowrap><b>Ingreso Denuncia</b></td>
-            <td>Teléfonicamente</td>
-            <td nowrap>23 dias</td>
-        </tr>
-        <tr>
             <td nowrap>
-                <small>Martes 16 Oct 2014</small>
+                <span ng-class="{'label label-warning':event.type=='observation','label label-danger':event.type=='call'}"><b>{{event.type | capitalize}}</b></span>
             </td>
-            <td nowrap><b>Ingreso a Taller</b></td>
-            <td>Tentativo por correo</td>
-            <td nowrap>22 dias</td>
+            <td>{{event.detail}}</td>
+            <td nowrap>{{event.date | fromNow}}</td>
         </tr>
-        <tr>
-            <td nowrap>
-                <small>Miercoles 17 Oct 2014</small>
-            </td>
-            <td nowrap><b>Inspección por liquidador</b></td>
-            <td>Daños graves</td>
-            <td nowrap>20 dias</td>
-        </tr>
-        <tr>
-            <td nowrap>
-                <small>Jueves 18 Oct 2014</small>
-            </td>
-            <td nowrap><b>Ingreso de datos al sistema</b></td>
-            <td>-</td>
-            <td nowrap>20 dias</td>
-        </tr>
-        <tr>
-            <td nowrap>
-                <small>Viernes 19 Oct 2014</small>
-            </td>
-            <td nowrap><b>Petición de Cotización Mas Garantia</b></td>
-            <td>Repuestos pueden tardar debido a importación</td>
-            <td nowrap>19 dias</td>
-        </tr>
-        <tr>
-            <td nowrap>
-                <small>Viernes 19 Oct 2014</small>
-            </td>
-            <td nowrap><span class="label label-warning" style="font-size: medium">Observación</span></td>
-            <td>Mas garantía confirma que los repuestos tardarán en llegar. Problemas de disponibilidad del
-                importador.
-            </td>
-            <td nowrap>19 dias</td>
-        </tr>
-        <tr>
-            <td nowrap>
-                <small>Lunes 22 Oct 2014</small>
-            </td>
-            <td nowrap><b>Recepción Cotización</b></td>
-            <td>-</td>
-            <td nowrap>16 dias</td>
-        </tr>
-        <tr>
-            <td nowrap>
-                <small>Martes 23 Oct 2014</small>
-            </td>
-            <td nowrap><b>Recepción Repuestos Taller</b></td>
-            <td>-</td>
-            <td nowrap>15 dias</td>
-        </tr>
-        <tr>
-            <td nowrap>
-                <small>Martes 23 Oct 2014</small>
-            </td>
-            <td nowrap><b>En reparación</b></td>
-            <td>-</td>
-            <td nowrap>15 dias</td>
-        </tr>
-        <tr>
-            <td nowrap>
-                <small>Viernes 26 Oct 2014</small>
-            </td>
-            <td nowrap><span class="label label-warning" style="font-size: medium">Observación</span></td>
-            <td>Taller llama para avisar que la reparación se torna complicada, no saben cuando tiempo va a tomar.</td>
-            <td nowrap>12 dias</td>
-        </tr>
-        <tr>
-            <td nowrap>
-                <small>Lunes 29 Oct 2014</small>
-            </td>
-            <td nowrap><span class="label label-danger" style="font-size: medium">Llamada Asegurado</span></td>
-            <td>Reclamo por demora de reparación</td>
-            <td nowrap>9 dias</td>
-        </tr>
-        <tr>
-            <td nowrap>
-                <small>-</small>
-            </td>
-            <td nowrap><b>Retiro de VH en taller</b></td>
-            <td>-</td>
-            <td nowrap>-</td>
-        </tr>
-        <tr>
-            <td nowrap>
-                <small>-</small>
-            </td>
-            <td nowrap><b>Retiro en taller por asegurado</b></td>
-            <td>-</td>
-            <td nowrap>-</td>
-        </tr>
-        <tr>
-            <td nowrap>
-                <small>-</small>
-            </td>
-            <td nowrap><b>Forma del recibo de conformidad</b></td>
-            <td>-</td>
-            <td nowrap>-</td>
-        </tr>
-        </tbody>
     </table>
 </div>
-
+<div ng-if="!bitacora">No hay eventos a mostrar</div>

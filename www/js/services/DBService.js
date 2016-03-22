@@ -60,6 +60,22 @@ angular.module('liquidator-server.services.DBService', [])
                 return p.promise;
             },
 
+            getBitacora: function(sinId){
+                var p = $q.defer();
+
+                $http.get(URL.replace("/api", "") + "/bitacora/" + sinId).then(
+                    function (data) {
+                        //console.log("------------------ bitacora = " + JSON.stringify(data.data, null, 2));
+                        p.resolve(data.data);
+                    },
+                    function (data, status, headers, config) {
+                        console.log("ERROR getBitacora status = " + status + " " + JSON.stringify(data));
+                    }
+                );
+
+                return p.promise;
+            },
+
             saveImage: function (sinId, what, img) {
                 var p = $q.defer();
 

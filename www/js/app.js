@@ -26,7 +26,7 @@ app.run(
                 controller: "OverviewController"
             })
             .state('busqueda', {
-                url: "/busqueda",
+                url: "/busqueda/:search",
                 templateUrl: "templates/busqueda.html",
                 controller: "BusquedaController"
             })

@@ -1,48 +1,32 @@
 <div class="panel panel-primary" style="text-align: center">
     <div class="panel-heading">
-        <form class="form-inline" role="form">
-            <div class="form-group">
-                <input type=text class="form-control" id="exampleInputEmail2" placeholder="Criterio">
-                <button type="submit" class="btn btn-default">Buscar</button>
-            </div>
-        </form>
+        {{siniestros.length}} resultados para búsqueda "{{busqueda}}"
     </div>
     <div class="panel-body">
         <div class="table-responsive">
-            <table class="table table-striped">
+            <table class="siniestros table table-bordered table-striped table-condensed">
                 <thead>
                 <tr>
                     <th>#</th>
                     <th>Marca</th>
                     <th>Modelo</th>
+                    <th>Color</th>
+                    <th>Año</th>
                     <th>Patente</th>
-                    <th>Asegurado</th>
-                    <th>Rut</th>
                     <th></th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>12414</td>
-                    <td>Toyota</td>
-                    <td>Yaris</td>
-                    <td>LJ-4123</td>
-                    <td>Guillermo Paredes</td>
-                    <td>15.231.532-3</td>
-                    <td><a href="#siniestro">
-                        <button class="btn btn-success btn-xs">Ver</button>
-                    </a></td>
-                </tr>
-                <tr>
-                    <td>93523</td>
-                    <td>Alfa Romeo</td>
-                    <td>Mito</td>
-                    <td>CSJG-21</td>
-                    <td>Cristobal Yañez</td>
-                    <td>7.242.578-k</td>
-                    <td><a href="#siniestro">
-                        <button class="btn btn-success btn-xs">Ver</button>
-                    </a></td>
+                <tr ng-repeat="siniestro in siniestros">
+                    <td width="5%">{{siniestro.id}}</td>
+                    <td width="20%">{{siniestro.marca}}</td>
+                    <td width="20%">{{siniestro.modelo}}</td>
+                    <td width="10%">{{siniestro.color}}</td>
+                    <td width="10%">{{siniestro.ano}}</td>
+                    <td width="20%">{{siniestro.patente}}</td>
+                    <td align="right">
+                        <a class="btn btn-primary" href="#/siniestro/{{siniestro.id}}" role="button">Ver</a>
+                    </td>
                 </tr>
                 </tbody>
             </table>

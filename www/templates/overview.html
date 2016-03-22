@@ -1,33 +1,65 @@
 <h1 class="page-header">
     Talleres
 </h1>
-<ul>
-    <li ng-repeat="taller in talleres">
+
+<style scoped>
+    .title{
+        padding: 10px;
+        font-weight: bold;
+    }
+
+    .title.taller{
+        background-color: #555;
+        color:white;
+        font-size: large;
+    }
+
+    .title.taller{
+        margin-top:20px;
+    }
+
+    .title.sucursal{
+        background-color: lightgray;
+        color:black;
+    }
+
+</style>
+
+
+<div ng-repeat="taller in talleres">
+    <div class="title taller">{{taller.nombre}}</div>
+    <div ng-repeat="sucursal in taller.sucursales">
+        <div class="title sucursal">{{sucursal.nombre}}</div>
+        <table class="siniestros table table-bordered table-striped table-condensed">
+            <tr ng-repeat="siniestro in siniestros[sucursal.id]">
+                <td width="5%">{{siniestro.id}}</td>
+                <td width="20%">{{siniestro.marca}}</td>
+                <td width="20%">{{siniestro.modelo}}</td>
+                <td width="10%">{{siniestro.color}}</td>
+                <td width="10%">{{siniestro.ano}}</td>
+                <td width="20%">{{siniestro.patente}}</td>
+                <td align="right">
+                    <a class="btn btn-primary" href="#/siniestro/{{siniestro.id}}" role="button">Ver</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<!--ul>
+    <li >
         <h3>{{taller.nombre}}</h3>
         <ul>
             <li ng-repeat="sucursal in taller.sucursales">
                 <h4>{{sucursal.nombre}}</h4>
                 <ul>
-                    <li ng-repeat="siniestro in siniestros[sucursal.id]">
-                        <table class="table table-condensed">
-                            <tr>
-                                <td>{{siniestro.id}}</td>
-                                <td>{{siniestro.marca}}</td>
-                                <td>{{siniestro.modelo}}</td>
-                                <td>{{siniestro.color}}</td>
-                                <td>{{siniestro.ano}}</td>
-                                <td>{{siniestro.patente}}</td>
-                                <td>
-                                    <a class="btn btn-default" href="#/siniestro/{{siniestro.id}}" role="button">Ver</a>
-                                </td>
-                            </tr>
-                        </table>
-                    </li>
+
                 </ul>
             </li>
         </ul>
     </li>
-</ul>
+</ul-->
 
 
 
